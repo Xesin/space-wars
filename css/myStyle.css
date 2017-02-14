@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Play');
+
+body, html { margin: 0px;}
+
+#contenedor{
+    display: block;
+    margin: auto;
+}
