@@ -22,13 +22,14 @@ Menu.prototype = {
 		this.game.load.image('playerBullet', 'img/PlayerBullet.png');
 		this.game.load.image('enemyBullet', 'img/EnemyBullet.png');
 		this.game.load.image('enemy', 'img/enemy.png');
+		this.game.load.image('bomb', 'img/bomb.png');
 		this.game.load.image('nebulae', 'img/nebulae.png');
 		this.game.load.image('star_field', 'img/starfield.png');
 		this.game.load.audio('explosion', 'audio/explosion.wav');
 		this.game.load.audio('background', 'audio/background.mp3');
 		this.game.load.image('ammoPack', 'img/AmmoPack.png');
 		this.game.load.image('healPack', 'img/HealPack.png');
-		
+		this.game.load.image('title', 'img/title.png');
 		
 		var progressText = this.game.add.text(this.game.width/2, this.game.height/2, '0%', 20, 'Play', 'rgb(200,30,30)'); //Ponemos un texto para el progreso de la carga
 		progressText.anchor.setTo(0.5);
@@ -61,21 +62,21 @@ Menu.prototype = {
 		this.mainMenu = this.game.add.group();
 		this.guide = this.game.add.group();
 		//Tutorial UI
-		var gameExplanation1 = new XEngine.Text(this.game, this.game.width/2, 100, 'El juego se maneja solo con el rat'+ String.fromCharCode(243) +'n.', 20, 'Play', 'rgb(60,150,30)');
+		var gameExplanation1 = new XEngine.Text(this.game, this.game.width/2, 180, 'El juego se maneja solo con el rat'+ String.fromCharCode(243) +'n.', 20, 'Play', 'rgb(60,150,30)');
 		gameExplanation1.style = 'bold';
 		gameExplanation1.strokeColor = 'black';
 		gameExplanation1.strokeWidth = 3;
 		gameExplanation1.anchor.setTo(0.5);
 		this.guide.add(gameExplanation1);
 		
-		var gameExplanation2 = new XEngine.Text(this.game, this.game.width/2, 150, 'Mientras mantienes pulsado, la nave dispara.', 20, 'Play', 'rgb(60,150,30)');
+		var gameExplanation2 = new XEngine.Text(this.game, this.game.width/2, 230, 'Mientras mantienes pulsado, la nave dispara.', 20, 'Play', 'rgb(60,150,30)');
 		gameExplanation2.style = 'bold';
 		gameExplanation2.strokeColor = 'black';
 		gameExplanation2.strokeWidth = 3;
 		gameExplanation2.anchor.setTo(0.5);
 		this.guide.add(gameExplanation2);
 		
-		var closeGuide = new XEngine.Text(this.game, this.game.width/2, 200, 'Back', 20, 'Play', 'rgb(200,30,30)');	
+		var closeGuide = new XEngine.Text(this.game, this.game.width/2, 280, 'Back', 20, 'Play', 'rgb(200,30,30)');	
 		closeGuide.style = 'bold';
 		closeGuide.strokeColor = 'black';
 		closeGuide.strokeWidth = 3;
@@ -86,7 +87,11 @@ Menu.prototype = {
 		
 		
 		//MainMenu UI
-		var clickToStart = new XEngine.Text(this.game, this.game.width/2 - 100, 200, String.fromCharCode(161) +'Start!', 20, 'Play', 'rgb(200,30,30)');
+		var title = new XEngine.Sprite(this.game, this.game.width/2, 180, 'title');
+		title.anchor.setTo(0.5);
+		this.mainMenu.add(title);
+		
+		var clickToStart = new XEngine.Text(this.game, this.game.width/2 - 100, 280, String.fromCharCode(161) +'Start!', 20, 'Play', 'rgb(200,30,30)');
 		clickToStart.style = 'bold';
 		clickToStart.strokeColor = 'black';
 		clickToStart.strokeWidth = 3;
@@ -96,7 +101,7 @@ Menu.prototype = {
 		this.mainMenu.add(clickToStart);
 		
 		
-		var openGuide = new XEngine.Text(this.game,this.game.width/2 + 100, 200, 'Tutorial', 20, 'Play', 'rgb(60,150,30)');	
+		var openGuide = new XEngine.Text(this.game,this.game.width/2 + 100, 280, 'Tutorial', 20, 'Play', 'rgb(60,150,30)');	
 		openGuide.style = 'bold';
 		openGuide.strokeColor = 'black';
 		openGuide.strokeWidth = 3;

@@ -144,7 +144,7 @@ SpaceWars.prototype = {
 				enemy = new Enemy(this.game, this.game.width + 60, enemyPosY, 'enemy', this.enemiesBullets, this.pickups, this.points, this.player);
 				break;
 			case 2:
-				enemy = new Bomb(this.game, this.game.width + 60, enemyPosY, 'enemy', this.enemiesBullets, this.pickups, this.points);
+				enemy = new Bomb(this.game, this.game.width + 60, enemyPosY, 'bomb', this.enemiesBullets, this.pickups, this.points);
 		}
 		this.enemies.add(enemy);
 	},

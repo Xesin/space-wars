@@ -1,14 +1,13 @@
 /* global XEngine Bullet Player HealPack Point*/
 var Bomb = function(game, posX, posY, sprite, bullets, pickups, points){
     XEngine.Sprite.call(this, game, posX, posY, sprite);
-    this.scale.setTo(0.5);
     this.anchor.setTo(0.5);
     this.game.physics.enablePhysics(this);
     this.bullets = bullets;                                                     //Referencia al grupo de balas
     this.points = points;                                                       //Referencia al grupo de puntos
     this.pickups = pickups;                                                     //Referencia al grupo de pickups
     this.acceleration = 300;
-    this.health = 55 * game.state.currentState.phase;
+    this.health = 55 * (game.state.currentState.phase * 1.75);
     this.body.gravity = 0;
     this.body.staticFriction = 0;
     this.body.bounds.width = 15;
