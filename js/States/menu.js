@@ -9,6 +9,8 @@ function initGame(){
    game.state.add('menu', Menu);												//Añadimos el estado del menú
    game.state.add('space', SpaceWars);											//Añadimos el estado del juego
    game.state.start('menu');													//Arrancamos el estado
+   game.scale.scaleType = XEngine.Scale.SHOW_ALL;
+   game.scale.updateScale();
 }
 
 var Menu = function (game) {
